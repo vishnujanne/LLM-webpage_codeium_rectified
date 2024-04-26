@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery Company</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #444;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        .accordion {
+            background-color: #f9f9f9;
+            color: #333;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+        .accordion:hover {
+            background-color: #ddd;
+        }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Food Delivery Company</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Account</a>
+        <a href="#">Delivery History</a>
+        <a href="#">Login</a>
+        <a href="#">Signup</a>
+        <label for="search">Search:</label>
+        <input type="text" id="search" placeholder="Search...">
+    </nav>
+    <button class="accordion">New Items</button>
+    <div class="panel">
+        <img src="item1.jpg" alt="Item 1">
+        <img src="item2.jpg" alt="Item 2">
+        <img src="item3.jpg" alt="Item 3">
+    </div>
+    <h2>Menu</h2>
+    <div class="menu">
+        <!-- Display all the items delivered by the company with the "add to cart" option -->
+    </div>
+    <footer>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+    </footer>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
